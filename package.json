@@ -1,0 +1,23 @@
+{
+  "name": "jobtrack-v2",
+  "version": "1.0.0",
+  "description": "A full-stack job application tracking system",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "job-tracker",
+    "nodejs",
+    "express",
+    "sqlite"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "better-sqlite3": "^13.0.3",
+    "dotenv": "^18.0.9",
+    "express": "^5.3.0"
+  }
+}

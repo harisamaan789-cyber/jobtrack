@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobTrack | Job Application Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="topbar">
+        <a href="#" class="logo">Job<span>Track</span></a>
+        <p>Your career journey, organised.</p>
+    </header>
+
+    <main class="container">
+        <section class="welcome">
+            <div>
+                <p class="eyebrow">YOUR CAREER DASHBOARD</p>
+                <h1>Keep your job search on track.</h1>
+                <p class="subtitle">Manage applications, follow your progress and stay organised.</p>
+            </div>
+            <button id="add-job-button" class="primary-button">+ Add application</button>
+        </section>
+
+        <section class="stats-grid">
+            <article class="stat-card">
+                <span>Total applications</span>
+                <strong id="total-count">0</strong>
+            </article>
+            <article class="stat-card">
+                <span>Applied</span>
+                <strong id="applied-count">0</strong>
+            </article>
+            <article class="stat-card">
+                <span>Interviews</span>
+                <strong id="interview-count">0</strong>
+            </article>
+            <article class="stat-card">
+                <span>Offers</span>
+                <strong id="offer-count">0</strong>
+            </article>
+            <article class="stat-card">
+                <span>Rejected</span>
+                <strong id="rejected-count">0</strong>
+            </article>
+        </section>
+
+        <section class="applications-section">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">YOUR RECORDS</p>
+                    <h2>Job applications</h2>
+                </div>
+            </div>
+
+            <div class="filters">
+                <input
+                    type="search"
+                    id="search-input"
+                    placeholder="Search company or position..."
+                >
+
+                <select id="status-filter">
+                    <option value="All">All statuses</option>
+                    <option value="Applied">Applied</option>
+                    <option value="Interview">Interview</option>
+                    <option value="Offer">Offer</option>
+                    <option value="Rejected">Rejected</option>
+                </select>
+            </div>
+
+            <p id="message" role="status"></p>
+            <div id="jobs-container" class="jobs-grid"></div>
+        </section>
+    </main>
+
+    <div id="job-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-heading">
+                <h2 id="modal-title">Add application</h2>
+                <button id="close-modal" class="close-button" aria-label="Close">×</button>
+            </div>
+
+            <form id="job-form">
+                <label for="company">Company name *</label>
+                <input type="text" id="company" required maxlength="100">
+
+                <label for="position">Job position *</label>
+                <input type="text" id="position" required maxlength="100">
+
+                <label for="status">Application status</label>
+                <select id="status">
+                    <option value="Applied">Applied</option>
+                    <option value="Interview">Interview</option>
+                    <option value="Offer">Offer</option>
+                    <option value="Rejected">Rejected</option>
+                </select>
+
+                <label for="applied-date">Date applied</label>
+                <input type="date" id="applied-date">
+
+                <label for="job-url">Job listing URL</label>
+                <input type="url" id="job-url" placeholder="https://example.com/job">
+
+                <label for="notes">Notes</label>
+                <textarea id="notes" rows="4" placeholder="Add interview details, reminders or notes..."></textarea>
+
+                <div class="form-actions">
+                    <button type="button" id="cancel-button" class="secondary-button">Cancel</button>
+                    <button type="submit" id="save-button" class="primary-button">Save application</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>JobTrack · Built with HTML, CSS, JavaScript, Node.js, Express and SQLite.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
